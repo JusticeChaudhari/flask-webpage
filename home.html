@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Flask_2 App</title>
+</head>
+<body style="background-color:black; color:white">
+    <nav class="navbar navbar-expand-lg shadow-sm fixed-top bg-dark border-bottom border-body" data-bs-theme="dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#openings"><img src="../static/laptop.jpg" width="30px" height="30px"></a>
+        </div>
+      </nav>
+      <br>
+   <div class="" style="padding: 5%;">
+    <center><h1 style="color: goldenrod; letter-spacing:2.5px;"> Tech Jovian, {{company_name}} </h1></center>
+    <img src="../static/laptop.jpg" height='400px' width="100% vw">
+    <p>{{sdac}}</p>
+    <h3>About Us : </h3>
+    <p style="font-size: 20px; text-align:justify ;padding:30px">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam sed amet nam minima nostrum laboriosam, id dolorem perferendis animi blanditiis dicta, porro sunt consectetur maxime quos iure, dolore velit labore?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas optio quisquam sapiente vitae cum iste ducimus eius odio exercitationem placeat voluptatum enim aperiam temporibus sunt, nobis impedit quam earum veniam.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad facilis porro inventore? Quos, reiciendis reprehenderit dolorum quibusdam earum odit nisi accusantium totam soluta, a necessitatibus sapiente inventore quam amet animi.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum minima error corrupti ab ea sapiente deserunt eos pariatur, fugiat aliquid cum dignissimos minus modi vel ratione dolore quaerat repellat aut.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis beatae quis cupiditate quas ab, omnis iure atque cumque accusantium adipisci nihil molestiae sint in vitae repellendus voluptatum nesciunt rem corrupti?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos nulla inventore praesentium qui eveniet fugiat officia, voluptatum molestiae vel! Libero et, esse dolore optio soluta saepe odio impedit eaque tempore!
+    </p>
+    <h2 style="color: silver;">Show Jobs Here</h2>
+    <!-- here in the syantaxing plask argurements are passed as {{ARGUEMENTS}} -->
+    <!-- <p style="padding: 20px;">{{jobs}}</p> -->
+    <div id="openings" style="padding: 22px;">
+        <hr>
+        {% for i in jobs %}
+        <div class="row">
+            <div class="col">
+                <h3 style="color: silver;">{{i['title']}}</h3>
+            <div class="mb-5">
+                <p><b >Location : </b> <span style="color: gray;">{{i['location']}}</span></p> 
+                {% if 'salary' in i %}
+                <p><b>Salary : </b><span style="color: goldenrod; display:inline;">{{i['salary']}}</span></p>
+                {% endif %}
+              
+            </div>
+            </div>
+            <div class="col" >
+                <a href="mailto: sarthakchaudhari401@gmail.com?subject=Job Application for {{i['tile']}} " type='button' class="btn btn-outline-light position-absolute end-0" style="margin-right: 60px;">apply now</a>
+              
+            </div>
+        </div>
+        <hr>
+        {% endfor %}
+    </div>
+    <div class="text-center">
+        <a target="_blank" href="mailto:sarthakchaudhari401@gmail.com" type='button' class="btn btn-outline-light mb-5"> contact Us</a>
+
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <h3>{{company_name}} Careers</h3>
+    <p style="text-align: justify;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque dolor consequuntur, fuga aut enim adipisci, mollitia exercitationem, quis distinctio illo tempora id. Eos tempore mollitia debitis cupiditate neque sit fugiat?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi sed, natus odio sapiente facilis mollitia nostrum impedit culpa illum est? Nostrum ipsa expedita est maiores magnam. Porro unde ad error.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga veniam culpa ab omnis itaque! Temporibus dolores similique numquam nesciunt molestias quae obcaecati voluptatibus nam cumque provident ipsum maxime, delectus a.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, libero eligendi! Ab iure dolorem, numquam rem blanditiis repellendus modi quas labore vero quos sunt molestiae fuga, ad impedit eaque recusandae!
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos amet ullam id odit similique veritatis corrupti cupiditate, ex sed quam voluptatibus aut, maxime officiis est aperiam, corporis voluptate iusto dolorum?
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit libero, nesciunt quaerat a nihil deserunt dolore cupiditate doloremque? Iusto voluptatum maxime facilis quisquam asperiores adipisci quasi sint commodi in exercitationem.
+    </p>
+    <div class="text-center"><a href="mailto:sarthakchaudhari401@gmail.com"><button class="btn btn-outline-light " style="width: 35%;"> APPLY </button></a></div>
+        </div>
+        <div class="col-6 mt-3" style="padding: 15px;">
+            <img class="img-fluid" width="95%" src="./static/people.webp">
+        </div>
+    </div>
+    <br><br><br><br>
+    <hr>
+   <p style="color: gray">copyright 2023</p>
+   
+    <p style="color: gray;" class="text-center"> Home<span style="padding: 20px;"></span>   Features<span style="padding: 20px;"></span>    FAQs<span style="padding: 20px;"></span>    About</p>
+    <p style="font-size: 10px;" class="text-center">© Jovian, SSC  All rights reserved</p>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
